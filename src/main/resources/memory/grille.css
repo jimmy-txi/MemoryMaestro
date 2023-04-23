@@ -1,0 +1,63 @@
+.button {
+    -fx-text-fill: #3f78b0;
+    -fx-background-color: #3f78b0;
+    -fx-border-color: #315e8b;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-opacity: 1;
+}
+
+.button-selected {
+    -fx-background-color: #007bff;
+    -fx-text-fill: #fff;
+    -fx-border-color: #005cbf;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-opacity: 1;
+}
+
+.button:hover {
+    -fx-background-color: #315e8b;
+    -fx-text-fill: #315e8b;
+    -fx-border-color: #274d72;
+}
+
+
+.button-win {
+    -fx-background-color: #3cb371;
+    -fx-text-fill: #fff;
+    -fx-border-color: #339961;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-opacity: 1;
+}
+
+.button-not {
+    -fx-background-color: #d70000;
+    -fx-text-fill: #fff;
+    -fx-border-color: #b60000;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-opacity: 1;
+}
+
+.button-quit {
+    -fx-background-color: linear-gradient(to bottom, #ff0000, #c70000);
+    -fx-text-fill: #fff;
+    -fx-font-size: 15px;
+    -fx-border-color: #ff0000;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-opacity: 1;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px 16px;
+    -fx-transition-duration: 2s;
+    -fx-transition-property: background-color, text-fill;
+}
+
+.button-quit:hover {
+    -fx-background-color: linear-gradient(to bottom, #c70000, #ff0000);
+    -fx-text-fill: #fff;
+    -fx-border-color: #d20000;
+    -fx-cursor: hand;
+}

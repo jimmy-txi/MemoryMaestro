@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="memory.AccueilController">
+   <top>
+      <Label alignment="CENTER" prefHeight="128.0" prefWidth="600.0" text="Memory Maestro" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="451.0" layoutY="-1.0" prefHeight="142.0" prefWidth="149.0" spacing="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="20.0" prefWidth="139.0" text="taille grille" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="butGrille2x2" mnemonicParsing="false" onAction="#butGrille2x2" prefHeight="25.0" prefWidth="129.0" text="2x2" />
+                  <Button fx:id="butGrille2x3" mnemonicParsing="false" onAction="#butGrille2x3" prefHeight="25.0" prefWidth="129.0" text="2x3" />
+                  <Button fx:id="butGrille4x4" mnemonicParsing="false" onAction="#butGrille4x4" prefHeight="25.0" prefWidth="129.0" text="4x4" />
+                  <Button fx:id="butGrille6x4" mnemonicParsing="false" onAction="#butGrille6x4" prefHeight="25.0" prefWidth="129.0" text="6x4" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+            <Button fx:id="butJouer" layoutX="189.0" layoutY="14.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#actionJouer" prefHeight="69.0" prefWidth="222.0" text="Jouer" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="189.0" />
+            <Button layoutX="235.0" layoutY="92.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#actionQuitter" prefHeight="35.0" prefWidth="130.0" text="Quitter" AnchorPane.leftAnchor="235.0" AnchorPane.rightAnchor="235.0" />
+            <VBox prefHeight="148.0" prefWidth="149.0" spacing="3.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="20.0" prefWidth="139.0" text="Type de jeux" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="butTriche" mnemonicParsing="false" onAction="#typeTriche" prefHeight="25.0" prefWidth="129.0" text="Triche" />
+                  <Button fx:id="butAleatoire" mnemonicParsing="false" onAction="#typeAleatoire" prefHeight="25.0" prefWidth="129.0" text="Aleatoire" />
+                  <Button fx:id="butMulti" mnemonicParsing="false" onAction="#typeMulti" prefHeight="25.0" prefWidth="129.0" text="2 joueurs" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="131.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="59.0" prefWidth="600.0" text="Mode de jeux" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <GridPane hgap="10.0" prefHeight="41.0" prefWidth="600.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="butLettre" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#modeLettre" text="Lettre" GridPane.columnIndex="1" />
+                  <Button fx:id="butExtreme" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#modeExtreme" text="Extreme" GridPane.columnIndex="3" />
+                  <Button fx:id="butNumero" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#modeNumero" prefHeight="24.0" prefWidth="120.0" text="Numero" GridPane.columnIndex="2" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

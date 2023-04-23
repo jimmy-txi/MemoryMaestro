@@ -1,0 +1,23 @@
+.button {
+    -fx-text-fill: #333333;
+    -fx-border-color: #333333;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+}
+.root { -fx-focus-color: transparent; }
+
+.button-selected {
+    -fx-background-color: #007bff;
+    -fx-text-fill: #fff;
+    -fx-border-color: #005cbf;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+}
+
+.button:hover {
+    -fx-background-color: #6fa8dc;
+    -fx-text-fill: #fff;
+    -fx-border-color: #5a87b2;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+}
