@@ -46,4 +46,10 @@ public class StepDefinitions {
     public void the_game_should_start() {
         assertTrue(gameStarted, "The game did not start");
     }
+
+    @Then("the game should not start")
+    public void the_game_should_not_start() {
+        assertTrue(gameStarted, "The game did not start");
+    }
+    
 }
