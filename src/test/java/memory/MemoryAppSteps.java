@@ -8,55 +8,61 @@ import memory.om.Jeu;
 import memory.om.Reponse;
 
 public class MemoryAppSteps {
-    private Jeu jeu;
-    private Reponse reponse;
+    private Jeu game;
+    private Reponse response;
 
-    @Given("je crée un jeu avec {int} paires")
-    public void jeCreeUnJeuAvecXPaires(int nbPaires) {
-        jeu = new Jeu(nbPaires);
+    @Given("I create a game with {int} pairs")
+    public void iCreateAGameWithXPairs(int numPairs) {
+        game = new Jeu(numPairs, true);
     }
 
-    @Then("le nombre total de cartes doit être {int}")
-    public void leNombreTotalDeCartesDoitEtre(int nbCartes) {
-        assertEquals(nbCartes, jeu.getNbCartes());
+    @Then("the total number of cards should be {int}")
+    public void theTotalNumberOfCardsShouldBe(int numCards) {
+        assertEquals(numCards, game.getNbCartes());
     }
 
-    @Then("aucune carte ne doit être trouvée")
-    public void aucuneCarteNeDoitEtreTrouvee() {
-        assertEquals(0, jeu.getNbCartesTrouvees());
+    @Then("no card should be found")
+    public void noCardShouldBeFound() {
+        assertEquals(0, game.getNbCartesTrouvees());
     }
 
-    @Then("la partie ne doit pas être terminée")
-    public void laPartieNeDoitPasEtreTerminee() {
-        assertFalse(jeu.isPartieTerminee());
+    @Then("the game should not be finished")
+    public void theGameShouldNotBeFinished() {
+        assertFalse(game.isPartieTerminee());
     }
 
-    @When("je joue la première carte numéro {int}")
-    public void jeJoueLaPremiereCarteNumero(int numCarte) {
-        reponse = jeu.jouer(numCarte);
+    @When("I play the first card number {int}")
+    public void iPlayTheFirstCardNumber(int cardNumber) {
+        System.out.println(cardNumber);
+        response = game.jouer(cardNumber);
+        System.out.println(response);
     }
 
-    @When("je joue la seconde carte avec le même numéro {int}")
-    public void jeJoueLaSecondeCarteAvecLeMemeNumero(int numCarte) {
-        reponse = jeu.jouer(numCarte);
+    @When("I play the second card with the same number {int}")
+    public void iPlayTheSecondCardWithTheSameNumber(int cardNumber) {
+        System.out.println(cardNumber);
+        response = game.jouer(cardNumber);
+        System.out.println(response);
     }
 
-    @Then("je dois avoir trouvé une paire")
-    public void jeDoisAvoirTrouveUnePaire() {
-        assertEquals(Reponse.GAGNE, reponse);
-    }
-    @Then("le nombre de coups joués doit être {int}")
-    public void leNombreDeCoupsJouesDoitEtre(int nbCoups) {
-        assertEquals(nbCoups, jeu.getNbCoupsJoues());
+    @Then("I should have found a pair")
+    public void iShouldHaveFoundAPair() {
+        // Check that the response is "GAGNE" when the cards form a pair
+        assertEquals(Reponse.GAGNE, response);
     }
 
-    @When("je joue une carte invalide avec le numéro {int}")
-    public void jeJoueUneCarteInvalideAvecLeNumero(int numCarte) {
-        reponse = jeu.jouer(numCarte);
+    @Then("the number of moves played should be {int}")
+    public void theNumberOfMovesPlayedShouldBe(int numMoves) {
+        assertEquals(numMoves, game.getNbCoupsJoues());
     }
 
-    @Then("une erreur doit être retournée")
-    public void uneErreurDoitEtreRetournee() {
-        assertEquals(Reponse.ERREUR, reponse);
+    @When("I play an invalid card with the number {int}")
+    public void iPlayAnInvalidCardWithTheNumber(int cardNumber) {
+        response = game.jouer(cardNumber);
+    }
+
+    @Then("an error should be returned")
+    public void anErrorShouldBeReturned() {
+        assertEquals(Reponse.ERREUR, response);
     }
 }
