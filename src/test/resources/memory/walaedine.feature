@@ -18,3 +18,4 @@ Feature: Memory Game
     Given I create a game with 2 pairs
     When I play an invalid card with the number -1
     Then an error should be returned
+
