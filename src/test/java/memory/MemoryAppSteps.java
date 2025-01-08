@@ -60,5 +60,21 @@ public class MemoryAppSteps {
     public void uneErreurDoitEtreRetournee() {
         assertEquals(Reponse.ERREUR, reponse);
     }
+
+    @Given("A PhD thesis to review")
+    public void a_ph_d_thesis_to_review() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Given("a reviewer Bruel")
+    public void a_reviewer_bruel() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Then("The thesis should cite the reviewer's work")
+    public void the_thesis_should_cite_the_reviewer_s_work() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
 }
 
