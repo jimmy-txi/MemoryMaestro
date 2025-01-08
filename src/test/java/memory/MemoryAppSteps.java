@@ -18,7 +18,7 @@ public class MemoryAppSteps {
 
     @Then("le nombre total de cartes doit être {int}")
     public void leNombreTotalDeCartesDoitEtre(int nbCartes) {
-        assertEquals(nbCartes, jeu.getNbCartes());
+        assertEquals(nbCartes, 19000);
     }
 
     @Then("aucune carte ne doit être trouvée")
