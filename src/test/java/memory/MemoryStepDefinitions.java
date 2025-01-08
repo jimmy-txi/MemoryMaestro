@@ -7,60 +7,83 @@ import javafx.application.Platform;
 import javafx.stage.Stage;
 import memory.MemoryApp;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.testfx.api.FxToolkit;
 import org.testfx.framework.junit5.ApplicationTest;
 
 public class MemoryStepDefinitions extends ApplicationTest {
 
     private MemoryApp memoryApp;
+    private Stage stage;
 
-    @Override
-    public void start(Stage stage) throws Exception {
-        memoryApp = new MemoryApp();
-        memoryApp.start(stage);
+    @BeforeEach
+    public void setUp() throws Exception {
+        FxToolkit.registerPrimaryStage();
+        FxToolkit.setupApplication(MemoryApp::new);
+        FxToolkit.setupStage(s -> {
+            this.stage = s;
+            stage.show();
+        });
+        waitForFxEvents();
     }
 
-    @Given("je suis sur l'écran d'Accueil")
+    @Given("je suis sur l'\u00e9cran d'Accueil")
     public void jeSuisSurLEcranDAccueil() {
         Platform.runLater(() -> {
-            assertNotNull(lookup("#butJouer"), "L'écran d'Accueil ne s'est pas chargé correctement.");
+            assertNotNull(lookup("#butJouer").query(), "L'\u00e9cran d'Accueil ne s'est pas charg\u00e9 correctement.");
         });
+        waitForFxEvents();
     }
 
-    @When("je sélectionne un mode de jeu")
+    @When("je s\u00e9lectionne un mode de jeu")
     public void jeSelectionneUnModeDeJeu() {
         Platform.runLater(() -> {
-            clickOn("#gameModeDropdown"); // Remplacez par l'ID ou le sélecteur de contrôle réel.
-            clickOn("Classique");         // Remplacez par l'option réelle.
+            clickOn("#gameModeDropdown");
+            clickOn("Classique");
         });
+        waitForFxEvents();
     }
 
-    @When("je sélectionne une taille de grille")
+    @When("je s\u00e9lectionne une taille de grille")
     public void jeSelectionneUneTailleDeGrille() {
         Platform.runLater(() -> {
-            clickOn("#gridSizeDropdown"); // Remplacez par l'ID ou le sélecteur de contrôle réel.
-            clickOn("4x4");               // Remplacez par l'option réelle.
+            clickOn("#gridSizeDropdown");
+            clickOn("4x4");
         });
+        waitForFxEvents();
     }
 
-    @When("je sélectionne un type de jeu")
+    @When("je s\u00e9lectionne un type de jeu")
     public void jeSelectionneUnTypeDeJeu() {
         Platform.runLater(() -> {
-            clickOn("#gameTypeDropdown"); // Remplacez par l'ID ou le sélecteur de contrôle réel.
-            clickOn("Animaux");           // Remplacez par l'option réelle.
+            clickOn("#gameTypeDropdown");
+            clickOn("Animaux");
         });
+        waitForFxEvents();
     }
 
     @When("j'appuie sur le bouton {string}")
     public void jAppuieSurLeBouton(String nomBouton) {
         Platform.runLater(() -> {
-            clickOn(nomBouton);
+            clickOn("#" + nomBouton);
         });
+        waitForFxEvents();
     }
 
-    @Then("l'écran de Grille doit s'afficher")
+    @Then("l'\u00e9cran de Grille doit s'afficher")
     public void lEcranDeGrilleDoitSAfficher() {
         Platform.runLater(() -> {
-            assertNotNull(lookup("#grillePane"), "L'écran de Grille ne s'est pas chargé correctement.");
+            assertNotNull(lookup("#grillePane").query(), "L'\u00e9cran de Grille ne s'est pas charg\u00e9 correctement.");
         });
+        waitForFxEvents();
+    }
+
+    // Méthode utilitaire pour attendre la fin des événements JavaFX
+    private void waitForFxEvents() {
+        try {
+            FxToolkit.toolkitContext().getPrimaryStageFuture().get();
+        } catch (Exception e) {
+            throw new RuntimeException("Erreur lors de l'attente des événements JavaFX.", e);
+        }
     }
 }

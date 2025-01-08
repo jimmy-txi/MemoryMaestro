@@ -19,8 +19,6 @@ Feature: Jeu de mémoire
     When je joue une carte invalide avec le numéro -1
     Then une erreur doit être retournée
 
-Feature: Jeu Memory Maestro
-
   Scenario: Démarrer le jeu avec des sélections valides
     Given je suis sur l'écran d'Accueil
     When je sélectionne un mode de jeu
