@@ -8,7 +8,7 @@
 - 👥 **2-Player Mode**: Play against a friend and compete for the highest score!  
 - 🎲 **Randomized Board**: Each game generates a new random board layout.  
 - 🕵️‍♂️ **Cheat Mode**: Reveal hidden cards to gain an advantage.  
-- 💪 **Extreme Options**:  
+- 🔍 **Visual Option**:  
   - **Hidden Mode**: Cards remain hidden even after a match attempt.  
   - **Letter/Number Mode**: Choose whether cards display letters or numbers.  
   - **Custom Grid Size**: Select from various grid sizes:  
