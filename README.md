@@ -10,8 +10,9 @@
 - 🕵️‍♂️ **Cheat Mode**: Reveal hidden cards to gain an advantage.  
 - 🔍 **Visual Option**:  
   - **Hidden Mode**: Cards remain hidden even after a match attempt.  
-  - **Letter/Number Mode**: Choose whether cards display letters or numbers.  
-  - **Custom Grid Size**: Select from various grid sizes:  
+  - **Numbers Mode**: Cards display numbers.
+  - **Letters Mode**: Cards display letters. 
+- 📏**Custom Grid Size**: Select from various grid sizes:  
     - `2x2`  
     - `2x3`  
     - `4x4`  
