@@ -25,7 +25,20 @@ jobs:
         cache: 'maven'
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+  test:
+    runs-on: ubuntu-22.04
+    needs: build  # Ce job dépend de la réussite du build
 
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: 'maven'
+    - name: Run Cucumber Tests
+      run: mvn test -Dcucumber.options="--plugin pretty"
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # Disabled due to potential issues with dependency submission
     # - name: Update dependency graph
