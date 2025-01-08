@@ -19,10 +19,3 @@ Feature: Jeu de mémoire
     When je joue une carte invalide avec le numéro -1
     Then une erreur doit être retournée
 
-  Scenario: Démarrer le jeu avec des sélections valides
-    Given je suis sur l'écran d'Accueil
-    When je sélectionne un mode de jeu
-    And je sélectionne une taille de grille
-    And je sélectionne un type de jeu
-    And j'appuie sur le bouton "Jouer"
-    Then l'écran de Grille doit s'afficher

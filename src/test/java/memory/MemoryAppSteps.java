@@ -43,7 +43,7 @@ public class MemoryAppSteps {
 
     @Then("je dois avoir trouvé une paire")
     public void jeDoisAvoirTrouveUnePaire() {
-        assertEquals(Reponse.PERDU, reponse);
+        assertEquals(Reponse.GAGNE, reponse);
     }
     @Then("le nombre de coups joués doit être {int}")
     public void leNombreDeCoupsJouesDoitEtre(int nbCoups) {
