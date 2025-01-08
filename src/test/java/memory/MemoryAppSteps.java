@@ -13,7 +13,7 @@ public class MemoryAppSteps {
 
     @Given("je crée un jeu avec {int} paires")
     public void jeCreeUnJeuAvecXPaires(int nbPaires) {
-        jeu = new Jeu(nbPaires);
+        jeu = new Jeu(nbPaires, true);
     }
 
     @Then("le nombre total de cartes doit être {int}")
@@ -33,12 +33,14 @@ public class MemoryAppSteps {
 
     @When("je joue la première carte numéro {int}")
     public void jeJoueLaPremiereCarteNumero(int numCarte) {
+        System.out.println(numCarte);
         reponse = jeu.jouer(numCarte);
         System.out.println(reponse);
     }
 
     @When("je joue la seconde carte avec le même numéro {int}")
     public void jeJoueLaSecondeCarteAvecLeMemeNumero(int numCarte) {
+        System.out.println(numCarte);
         reponse = jeu.jouer(numCarte);
         System.out.println(reponse);
     }
