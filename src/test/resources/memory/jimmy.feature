@@ -1,9 +1,18 @@
-Feature: Reviewing a Ph.D. Thesis
-    Every PhD thesis review has some recurrent steps
+# TESTS conditions of launching the game
+Feature: Launching a MemoryMaestro game
 
-    Scenario: A reviewer, being an expert on the field, should be cited somewhere
-        Given A PhD thesis to review
-        And a reviewer Bruel
-        Then The thesis should cite the reviewer's work
-            # => brew install pdfgrep 
-            # => pdfgrep -Ri keyword /some/directory 
+  Scenario: Launch a 2-player game with letters on a 4x4 grid
+    Given I run the application
+    And I have selected the "2 players" game type
+    And I have selected the "letters" game mode
+    And I have selected a "4x4" grid size
+    When I start the game
+    Then the game should start
+
+  Scenario: Launch a cheat game with numbers on a 6x4 grid
+    Given I run the application
+    And I have selected the "cheat" game type
+    And I have selected the "numbers" game mode
+    And I have selected a "6x4" grid size
+    When I start the game
+    Then the game should start
