@@ -22,7 +22,7 @@
 
 ```bash
 # Clone this repository
-git clone https://github.com/your-username/MemoryMaestro.git
+git clone https://github.com/jimmy-txi/MemoryMaestro.git
 
 # Compile the project
 javac -d bin src/*.java
@@ -45,7 +45,7 @@ javac -d bin src/*.java
 
 - [ ] Add sound effects  
 - [ ] Improve UI design  
-- [ ] Online multiplayer mode  
+- [ ] Add online multiplayer mode  
 
 ## 🤝 Contributing
 
