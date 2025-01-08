@@ -1,21 +1,20 @@
-Feature: Jeu de mémoire
-  Teste les fonctionnalités principales de la classe Jeu.
+Feature: Memory Game
+  Tests the main functionalities of the Jeu class.
 
-  Scenario: Démarrer une partie avec 3 paires
-    Given je crée un jeu avec 3 paires
-    Then le nombre total de cartes doit être 6
-    And aucune carte ne doit être trouvée
-    And la partie ne doit pas être terminée
+  Scenario: Start a game with 3 pairs
+    Given I create a game with 3 pairs
+    Then the total number of cards should be 6
+    And no card should be found
+    And the game should not be finished
 
-  Scenario: Jouer un coup valide et gagner une paire
-    Given je crée un jeu avec 2 paires
-    When je joue la première carte numéro 0
-    And je joue la seconde carte avec le même numéro 1
-    Then je dois avoir trouvé une paire
-    And le nombre de coups joués doit être 2
+  Scenario: Play a valid move and find a pair
+    Given I create a game with 2 pairs
+    When I play the first card number 0
+    And I play the second card with the same number 1
+    Then I should have found a pair
+    And the number of moves played should be 2
 
-  Scenario: Jouer un coup avec une carte invalide
-    Given je crée un jeu avec 2 paires
-    When je joue une carte invalide avec le numéro -1
-    Then une erreur doit être retournée
-
+  Scenario: Play a move with an invalid card
+    Given I create a game with 2 pairs
+    When I play an invalid card with the number -1
+    Then an error should be returned
