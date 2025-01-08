@@ -43,8 +43,14 @@ public class MemoryAppSteps {
 
     @Then("je dois avoir trouvé une paire")
     public void jeDoisAvoirTrouveUnePaire() {
+        // Vérifier que la réponse est "GAGNE" lorsque les cartes sont une paire
         assertEquals(Reponse.GAGNE, reponse);
+
+        // Vérifier que les cartes sont marquées comme trouvées
+        assertTrue(jeu.isCarteTrouvee(0));
+        assertTrue(jeu.isCarteTrouvee(1));
     }
+
     @Then("le nombre de coups joués doit être {int}")
     public void leNombreDeCoupsJouesDoitEtre(int nbCoups) {
         assertEquals(nbCoups, jeu.getNbCoupsJoues());
