@@ -14,6 +14,12 @@ public class StepDefinitions {
     private String gridSize;
     private boolean gameStarted = false;
 
+    
+    // array of correct values
+    private String[] gameModes = {"letter", "number", "extreme"};
+    private String[] gameTypes = {"cheat", "random", "2player"};
+    private String[] gridSizes = {"4x4", "6x6", "6x4"};
+
     private AccueilController accueilCtrl;
 
     @Given("I run the application")
@@ -41,14 +47,10 @@ public class StepDefinitions {
     public void i_start_the_game() {
         this.gameStarted = false;   
 
-        // array of correct values
-        String[] gameModes = {"letter", "number", "extreme"};
-        String[] gameTypes = {"cheat", "random", "2player"};
-        String[] gridSizes = {"4x4", "6x6", "6x4"};
 
         if ( accueilCtrl.mode != null && accueilCtrl.tailleGrille != null && accueilCtrl.type != null) {
             // check if the names are correct with an contains
-            if (Arrays.asList(gameModes).contains(accueilCtrl.mode) && Arrays.asList(gameTypes).contains(accueilCtrl.type) && Arrays.asList(gridSizes).contains(accueilCtrl.tailleGrille)) {
+            if (Arrays.asList(this.gameModes).contains(accueilCtrl.mode) && Arrays.asList(this.gameTypes).contains(accueilCtrl.type) && Arrays.asList(this.gridSizes).contains(accueilCtrl.tailleGrille)) {
                 this.gameStarted = true;
                 System.out.println("mode:" + accueilCtrl.mode + " grille:" + accueilCtrl.tailleGrille + " type:" + accueilCtrl.type);
             }
