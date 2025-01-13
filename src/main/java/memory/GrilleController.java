@@ -178,7 +178,7 @@ public class GrilleController implements Initializable {
 				button.setPrefSize(this.grille.getWidth() / getGrilleLarg(), this.grille.getHeight() / getGrileLong());
 				button.setBorder(null);
 				button.setFont(new Font(23));
-				if (this.mode == "lettre") {
+				if (this.mode == "letter") {
 					button.setText(""+alphabet.get(jeu.getCarteValeur(Integer.parseInt(button.getId()))));
 				}
 				else {
@@ -207,7 +207,7 @@ public class GrilleController implements Initializable {
 		
 	}
 	public void lancerJeu(String type, String mode, String grilleTaille) {
-		if (type =="triche") {
+		if (type =="cheat") {
 			
 			this.jeu = new Jeu( (this.grilleLarg*this.grilleLong)/2 ,true);
 		}
@@ -219,7 +219,7 @@ public class GrilleController implements Initializable {
 		this.mode = mode;
 		this.grilleTaille = grilleTaille;
 		initGrille();
-		if (type == "multi") {
+		if (type == "2player") {
 			setPlayerCount(2);
 		}
 		else setPlayerCount(1);
@@ -253,14 +253,14 @@ public class GrilleController implements Initializable {
 					this.premiereCarte.setText(""+jeu.getCarteValeur(Integer.parseInt(this.premiereCarte.getId())));
 				}
 				lockedButtons.add(this.premiereCarte);
-				if (this.type == "multi") {
+				if (this.type == "2player") {
 					listNbPoints.get(this.joueurPlaying.get()-1).set(listNbPoints.get(this.joueurPlaying.get()-1).get()+1);
 				}
 				nbEssais.setValue(nbEssais.getValue()+1);
 			}
 		}
 		if ( rep == Reponse.PERDU) {
-				if (this.type == "multi") {
+				if (this.type == "2player") {
 					if (this.joueurPlaying.get()>=this.nbJoueurs) {
 						this.joueurPlaying.set(1);
 					}
@@ -296,7 +296,7 @@ public class GrilleController implements Initializable {
 	
 		}
 		if ( jeu.isPartieTerminee() ) {
-			if (this.type == "multi") {
+			if (this.type == "2player") {
 				// get joueur gagnant
 				int max = 0;
 				int index = 0;

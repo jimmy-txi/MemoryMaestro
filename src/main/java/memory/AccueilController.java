@@ -89,6 +89,7 @@ public class AccueilController implements Initializable {
 			System.out.println("Jouer en mode " + this.mode + " avec une grille de taille " + this.tailleGrille);
 		}
 		else {
+			System.out.println("NONNNNN");
 			Alert creditAlert = new Alert(AlertType.ERROR);
 			creditAlert.setTitle("Erreur");
 			creditAlert.setHeaderText("Veuillez selectionner un mode et un type de grille");
@@ -101,7 +102,7 @@ public class AccueilController implements Initializable {
 
 	// CONSTRUCTOR //
 	public AccueilController() {
-		System.out.println("Construction de acueill de mort");
+		System.out.println("Construction de acueill");
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -135,7 +136,7 @@ public class AccueilController implements Initializable {
 	// MODE FUNCTIONS //
 	@FXML
 	public void modeTriche(){
-		setMode("triche");
+		setMode("cheat");
 		if ( !butTriche.getStyleClass().contains("button-selected") ) {
 			butTriche.getStyleClass().add("button-selected");
 		}
@@ -146,7 +147,7 @@ public class AccueilController implements Initializable {
 	}
 	@FXML
 	public void modeLettre(){
-		setMode("lettre");
+		setMode("letter");
 		if ( !butLettre.getStyleClass().contains("button-selected") ) {
 			butLettre.getStyleClass().add("button-selected");
 		}
@@ -155,7 +156,7 @@ public class AccueilController implements Initializable {
 	}
 	@FXML
 	public void modeNumero(){
-		setMode("couleur");
+		setMode("number");
 		butLettre.getStyleClass().remove("button-selected");
 		if ( !butNumero.getStyleClass().contains("button-selected") ) {
 			butNumero.getStyleClass().add("button-selected");
@@ -177,7 +178,7 @@ public class AccueilController implements Initializable {
 	// TYPE FUNCTIONS //
 	@FXML
 	public void typeMulti(){
-		setType("multi");
+		setType("2player");
 		if ( !butMulti.getStyleClass().contains("button-selected") ) {
 			butMulti.getStyleClass().add("button-selected");
 		}
@@ -186,7 +187,7 @@ public class AccueilController implements Initializable {
 	}
 	@FXML
 	public void typeTriche(){
-		setType("triche");
+		setType("cheat");
 		if ( !butTriche.getStyleClass().contains("button-selected") ) {
 			butTriche.getStyleClass().add("button-selected");
 		}
@@ -195,7 +196,7 @@ public class AccueilController implements Initializable {
 	}
 	@FXML 
 	public void typeAleatoire() {
-		setType("aleatoire");
+		setType("random");
 		if ( !butAleatoire.getStyleClass().contains("button-selected") ) {
 			butAleatoire.getStyleClass().add("button-selected");
 		}
